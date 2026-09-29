@@ -656,20 +656,20 @@ export default function ShopPage({
                       style={{ cursor: 'pointer' }}
                     >
                       {/* Image Wrap */}
-                      <div className="product-img-wrap" style={{ position: 'relative', overflow: 'hidden', aspectRatio: '1/1', backgroundColor: '#FFFFFF', borderRadius: '4px' }}>
+                      <div className="product-img-wrap" style={{ position: 'relative', overflow: 'hidden', aspectRatio: '1/1', backgroundColor: '#FFFFFF', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.1rem' }}>
                         <img 
                           src={product.primaryImage} 
                           alt={product.name}
                           className="primary-img"
                           loading="lazy"
-                          style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', transition: 'transform 0.5s ease' }}
                         />
                         {product.secondaryImage && (
                           <img 
                             src={product.secondaryImage} 
                             alt={`${product.name} alternate angle`}
                             className="secondary-img"
-                            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0, transition: 'opacity 0.4s ease' }}
+                            style={{ position: 'absolute', inset: '1.1rem', width: 'calc(100% - 2.2rem)', height: 'calc(100% - 2.2rem)', objectFit: 'contain', objectPosition: 'center', opacity: 0, transition: 'opacity 0.4s ease' }}
                             loading="lazy"
                           />
                         )}

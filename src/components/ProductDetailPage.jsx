@@ -185,6 +185,7 @@ export default function ProductDetailPage({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                padding: '1.5rem',
                 boxShadow: 'var(--shadow-card)'
               }}
             >
@@ -220,7 +221,8 @@ export default function ProductDetailPage({
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover',
+                  objectFit: 'contain',
+                  objectPosition: 'center',
                   transition: 'transform 0.5s ease'
                 }}
               />
@@ -239,14 +241,17 @@ export default function ProductDetailPage({
                       borderRadius: '4px',
                       overflow: 'hidden',
                       border: activeImage === img ? '2px solid var(--text-charcoal)' : '1px solid var(--border-soft)',
-                      padding: 0,
+                      padding: '0.3rem',
                       cursor: 'pointer',
                       opacity: activeImage === img ? 1 : 0.65,
                       transition: 'all 0.2s ease',
-                      backgroundColor: '#FFFFFF'
+                      backgroundColor: '#FFFFFF',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
                     }}
                   >
-                    <img src={img} alt={`Angle ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={img} alt={`Angle ${idx + 1}`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   </button>
                 ))}
               </div>

@@ -108,16 +108,20 @@ export default function ProductDetailModal({
                 aspectRatio: '1 / 1',
                 borderRadius: 'var(--radius-sm)',
                 overflow: 'hidden',
-                backgroundColor: 'var(--bg-warm-ivory)',
+                backgroundColor: '#FFFFFF',
                 border: '1px solid var(--border-soft)',
-                marginBottom: '1rem'
+                marginBottom: '1rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '1.5rem'
               }}
             >
               <img 
                 src={selectedImage} 
                 alt={product.name}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
-                onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.12)'}
+                style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', transition: 'transform 0.4s ease' }}
+                onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.08)'}
                 onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
               />
 

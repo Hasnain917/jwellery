@@ -89,7 +89,10 @@ export default function BestSellersGrid({
                       className="secondary-img"
                       style={{
                         position: 'absolute',
-                        inset: 0,
+                        inset: '1.1rem',
+                        width: 'calc(100% - 2.2rem)',
+                        height: 'calc(100% - 2.2rem)',
+                        objectFit: 'contain',
                         opacity: 0
                       }}
                       loading="lazy"

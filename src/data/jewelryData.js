@@ -1,79 +1,78 @@
-// Avi Jewelers USA — Luxury Product Catalog & Data
-// Sourced from client live store: https://www.avijewelersco.com/
-// Chicago Bespoke Custom Atelier & Certified Fine Jewelry
+// Avi Jewelers USA — Master Diamond & Fine Jewelry Catalog
+// 50 Authentic Products Sourced Directly from avijewelersco.com
 
 export const DIAMOND_SHAPES = [
   {
-    id: "round",
-    name: "Round",
-    tagline: "Timeless Brilliance",
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
-    ratio: "1.00",
-    popularWith: "Classic Solitaires & Halos"
+    "id": "round",
+    "name": "Round",
+    "tagline": "Timeless Brilliance",
+    "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
+    "ratio": "1.00",
+    "popularWith": "Classic Solitaires & Halos"
   },
   {
-    id: "oval",
-    name: "Oval",
-    tagline: "Elongated Elegance",
-    image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
-    ratio: "1.35 - 1.50",
-    popularWith: "Hidden Halos & Pavé Bands"
+    "id": "oval",
+    "name": "Oval",
+    "tagline": "Elongated Elegance",
+    "image": "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
+    "ratio": "1.35 - 1.50",
+    "popularWith": "Hidden Halos & Pavé Bands"
   },
   {
-    id: "radiant",
-    name: "Radiant",
-    tagline: "Intense Fire & Sparkle",
-    image: "https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=600&q=80",
-    ratio: "1.20 - 1.35",
-    popularWith: "Modern Halos & Three-Stones"
+    "id": "radiant",
+    "name": "Radiant",
+    "tagline": "Intense Fire & Sparkle",
+    "image": "https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=600&q=80",
+    "ratio": "1.20 - 1.35",
+    "popularWith": "Modern Halos & Three-Stones"
   },
   {
-    id: "pear",
-    name: "Pear",
-    tagline: "Teardrop Grace",
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
-    ratio: "1.45 - 1.65",
-    popularWith: "Vintage & East-West Settings"
+    "id": "pear",
+    "name": "Pear",
+    "tagline": "Teardrop Grace",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
+    "ratio": "1.45 - 1.65",
+    "popularWith": "Vintage & East-West Settings"
   },
   {
-    id: "cushion",
-    name: "Cushion",
-    tagline: "Romantic Pillow Cut",
-    image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80",
-    ratio: "1.00 - 1.15",
-    popularWith: "Antique Halos & Solitaires"
+    "id": "cushion",
+    "name": "Cushion",
+    "tagline": "Romantic Pillow Cut",
+    "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80",
+    "ratio": "1.00 - 1.15",
+    "popularWith": "Antique Halos & Solitaires"
   },
   {
-    id: "princess",
-    name: "Princess",
-    tagline: "Sharp Geometric Fire",
-    image: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=600&q=80",
-    ratio: "1.00",
-    popularWith: "Bezel & Channel Settings"
+    "id": "princess",
+    "name": "Princess",
+    "tagline": "Sharp Geometric Fire",
+    "image": "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=600&q=80",
+    "ratio": "1.00",
+    "popularWith": "Bezel & Channel Settings"
   },
   {
-    id: "emerald",
-    name: "Emerald",
-    tagline: "Hall of Mirrors Clarity",
-    image: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?auto=format&fit=crop&w=600&q=80",
-    ratio: "1.30 - 1.50",
-    popularWith: "Art Deco & Step-Cut Bands"
+    "id": "emerald",
+    "name": "Emerald",
+    "tagline": "Hall of Mirrors Clarity",
+    "image": "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?auto=format&fit=crop&w=600&q=80",
+    "ratio": "1.30 - 1.50",
+    "popularWith": "Art Deco & Step-Cut Bands"
   },
   {
-    id: "marquise",
-    name: "Marquise",
-    tagline: "Regal & Flattering",
-    image: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
-    ratio: "1.75 - 2.15",
-    popularWith: "Nature-Inspired & East-West"
+    "id": "marquise",
+    "name": "Marquise",
+    "tagline": "Regal & Flattering",
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
+    "ratio": "1.75 - 2.15",
+    "popularWith": "Nature-Inspired & East-West"
   },
   {
-    id: "heart",
-    name: "Heart",
-    tagline: "Ultimate Romantic Symbol",
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
-    ratio: "1.00",
-    popularWith: "Custom Solitaires & Pendants"
+    "id": "heart",
+    "name": "Heart",
+    "tagline": "Ultimate Romantic Symbol",
+    "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
+    "ratio": "1.00",
+    "popularWith": "Custom Solitaires & Pendants"
   }
 ];
 
@@ -118,7 +117,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "oval",
     "stoneType": "lab-diamond",
     "badge": "IGI Certified Lab Diamond",
-    "isBestSeller": true,
+    "isBestSeller": false,
     "isFeatured": true,
     "price": 2850,
     "compareAtPrice": 3563,
@@ -147,7 +146,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "princess",
     "stoneType": "moissanite",
     "badge": "GRA Certified Moissanite",
-    "isBestSeller": true,
+    "isBestSeller": false,
     "isFeatured": true,
     "price": 900,
     "compareAtPrice": 1125,
@@ -205,7 +204,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "round",
     "stoneType": "moissanite",
     "badge": "GRA Certified Moissanite",
-    "isBestSeller": true,
+    "isBestSeller": false,
     "isFeatured": true,
     "price": 430,
     "compareAtPrice": 538,
@@ -234,7 +233,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "round",
     "stoneType": "lab-diamond",
     "badge": "IGI Certified Lab Diamond",
-    "isBestSeller": true,
+    "isBestSeller": false,
     "isFeatured": true,
     "price": 2230,
     "compareAtPrice": 2788,
@@ -263,7 +262,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "round",
     "stoneType": "lab-diamond",
     "badge": "IGI Certified Lab Diamond",
-    "isBestSeller": true,
+    "isBestSeller": false,
     "isFeatured": true,
     "price": 1230,
     "compareAtPrice": 1538,
@@ -292,7 +291,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "round",
     "stoneType": "lab-diamond",
     "badge": "IGI Certified Lab Diamond",
-    "isBestSeller": true,
+    "isBestSeller": false,
     "isFeatured": true,
     "price": 1730,
     "compareAtPrice": 2163,
@@ -350,7 +349,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "round",
     "stoneType": "moissanite",
     "badge": "GRA Certified Moissanite",
-    "isBestSeller": true,
+    "isBestSeller": false,
     "isFeatured": true,
     "price": 730,
     "compareAtPrice": 913,
@@ -379,7 +378,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "round",
     "stoneType": "moissanite",
     "badge": "GRA Certified Moissanite",
-    "isBestSeller": true,
+    "isBestSeller": false,
     "isFeatured": true,
     "price": 630,
     "compareAtPrice": 788,
@@ -437,7 +436,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "round",
     "stoneType": "moissanite",
     "badge": "GRA Certified Moissanite",
-    "isBestSeller": true,
+    "isBestSeller": false,
     "isFeatured": true,
     "price": 630,
     "compareAtPrice": 788,
@@ -582,7 +581,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "oval",
     "stoneType": "lab-diamond",
     "badge": "IGI Certified Lab Diamond",
-    "isBestSeller": false,
+    "isBestSeller": true,
     "isFeatured": true,
     "price": 2830,
     "compareAtPrice": 3538,
@@ -669,7 +668,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "round",
     "stoneType": "lab-diamond",
     "badge": "IGI Certified Lab Diamond",
-    "isBestSeller": false,
+    "isBestSeller": true,
     "isFeatured": false,
     "price": 2830,
     "compareAtPrice": 3538,
@@ -1336,7 +1335,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "princess",
     "stoneType": "moissanite",
     "badge": "GRA Certified Moissanite",
-    "isBestSeller": false,
+    "isBestSeller": true,
     "isFeatured": false,
     "price": 630,
     "compareAtPrice": 788,
@@ -1423,7 +1422,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "round",
     "stoneType": "lab-diamond",
     "badge": "IGI Certified Lab Diamond",
-    "isBestSeller": false,
+    "isBestSeller": true,
     "isFeatured": false,
     "price": 382,
     "compareAtPrice": 478,
@@ -1539,7 +1538,7 @@ export const INITIAL_PRODUCTS = [
     "shape": "round",
     "stoneType": "moissanite",
     "badge": "GRA Certified Moissanite",
-    "isBestSeller": false,
+    "isBestSeller": true,
     "isFeatured": false,
     "price": 480,
     "compareAtPrice": 600,
@@ -1637,72 +1636,70 @@ export const TESTIMONIALS = [
 
 export const FAQS = [
   {
-    q: "What is the difference between Lab-Grown Diamonds, Moissanite, and Natural Diamonds?",
-    a: "Lab-grown diamonds are 100% chemically, physically, and optically identical to natural mined diamonds (pure carbon in a cubic crystalline structure, rated 10 on the Mohs hardness scale), verified and graded by the same premier labs like IGI & GIA — but at 60–80% lower cost and zero mining disruption. Moissanite is a silicon carbide gemstone that exhibits even higher optical dispersion (fire and rainbow flashes) and hardness of 9.25, making it an extraordinary, durable, and budget-friendly fine jewelry choice."
+    "q": "What is the difference between Lab-Grown Diamonds, Moissanite, and Natural Diamonds?",
+    "a": "Lab-grown diamonds are 100% chemically, physically, and optically identical to natural mined diamonds (pure carbon in a cubic crystalline structure, rated 10 on the Mohs hardness scale), verified and graded by the same premier labs like IGI & GIA — but at 60–80% lower cost and zero mining disruption. Moissanite is a silicon carbide gemstone that exhibits even higher optical dispersion (fire and rainbow flashes) and hardness of 9.25, making it an extraordinary, durable, and budget-friendly fine jewelry choice."
   },
   {
-    q: "How long does the bespoke custom design process take?",
-    a: "Our standard custom timeline is 3 to 4 weeks from initial concept approval to your doorstep. This includes: (1) Free consultation and initial sketches (1–2 days), (2) Photorealistic 3D CAD modeling and wax preview (2–3 days), (3) Casting in solid recycled gold or 950 platinum and hand-setting in Chicago (10–14 days), and (4) Quality audit, IGI/GRA certification, appraisal, and overnight insured delivery."
+    "q": "How long does the bespoke custom design process take?",
+    "a": "Our standard custom timeline is 3 to 4 weeks from initial concept approval to your doorstep. This includes: (1) Free consultation and initial sketches (1–2 days), (2) Photorealistic 3D CAD modeling and wax preview (2–3 days), (3) Casting in solid recycled gold or 950 platinum and hand-setting in Chicago (10–14 days), and (4) Quality audit, IGI/GRA certification, appraisal, and overnight insured delivery."
   },
   {
-    q: "How do I determine the correct ring size secretly?",
-    a: "We offer several discreet methods! You can borrow a ring they wear on their ring finger and trace the inside circle on paper, use our free printable sizing chart, or schedule a quick virtual consultation where we help guide you based on hand photos. Plus, all Avi Jewelers custom engagement rings include one complimentary resizing within the first year."
+    "q": "How do I determine the correct ring size secretly?",
+    "a": "We offer several discreet methods! You can borrow a ring they wear on their ring finger and trace the inside circle on paper, use our free printable sizing chart, or schedule a quick virtual consultation where we help guide you based on hand photos. Plus, all Avi Jewelers custom engagement rings include one complimentary resizing within the first year."
   },
   {
-    q: "Is shipping safe and fully insured?",
-    a: "Yes, 100%. Every single shipment is fully insured for its full replacement value via specialized armored parcel courier (FedEx Priority / Brinks). Packages are sent in discreet, unbranded luxury exterior boxes with adult signature required upon delivery, ensuring total surprise and complete security."
+    "q": "Is shipping safe and fully insured?",
+    "a": "Yes, 100%. Every single shipment is fully insured for its full replacement value via specialized armored parcel courier (FedEx Priority / Brinks). Packages are sent in discreet, unbranded luxury exterior boxes with adult signature required upon delivery, ensuring total surprise and complete security."
   },
   {
-    q: "Can I incorporate heirloom stones or remodel old jewelry?",
-    a: "Absolutely. We frequently reset client heirloom stones into modern bespoke settings or melt client gold into sentimental new wedding bands. Simply mention heirloom stones during your consultation."
+    "q": "Can I incorporate heirloom stones or remodel old jewelry?",
+    "a": "Absolutely. We frequently reset client heirloom stones into modern bespoke settings or melt client gold into sentimental new wedding bands. Simply mention heirloom stones during your consultation."
   },
   {
-    q: "What warranty and lifetime care do you provide?",
-    a: "Every Avi Jewelers piece comes with our Lifetime Care Guarantee: complimentary yearly ultrasonic cleaning, prong tightening, steam polishing, and rhodium plating. Your stones remain insured and covered against manufacturing defects for life."
+    "q": "What warranty and lifetime care do you provide?",
+    "a": "Every Avi Jewelers piece comes with our Lifetime Care Guarantee: complimentary yearly ultrasonic cleaning, prong tightening, steam polishing, and rhodium plating. Your stones remain insured and covered against manufacturing defects for life."
   },
   {
-    q: "What payment and financing options are available?",
-    a: "We accept all major credit cards, bank wire transfers (with a 2% courtesy discount), Apple Pay, and flexible 0% APR financing options via Affirm and Klarna, allowing you to split payments over 6, 12, or 24 months."
+    "q": "What payment and financing options are available?",
+    "a": "We accept all major credit cards, bank wire transfers (with a 2% courtesy discount), Apple Pay, and flexible 0% APR financing options via Affirm and Klarna, allowing you to split payments over 6, 12, or 24 months."
   }
 ];
 
 export const INSTAGRAM_POSTS = [
   {
-    id: "ig-1",
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80",
-    likes: 1240,
-    caption: "Another Chicago love story begins. 3.00ct custom oval in bespoke 18k yellow gold."
+    "id": "ig-1",
+    "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80",
+    "likes": 1240,
+    "caption": "Another Chicago love story begins. 3.00ct custom oval in bespoke 18k yellow gold."
   },
   {
-    id: "ig-2",
-    image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=500&q=80",
-    likes: 980,
-    caption: "The subtle perfection of a hidden halo. You only see it when you turn your hand."
+    "id": "ig-2",
+    "image": "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=500&q=80",
+    "likes": 980,
+    "caption": "The subtle perfection of a hidden halo. You only see it when you turn your hand."
   },
   {
-    id: "ig-3",
-    image: "https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=500&q=80",
-    likes: 1410,
-    caption: "Radiant cuts hit differently in natural sunlight. Handcrafted in our Chicago studio."
+    "id": "ig-3",
+    "image": "https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=500&q=80",
+    "likes": 1410,
+    "caption": "Radiant cuts hit differently in natural sunlight. Handcrafted in our Chicago studio."
   },
   {
-    id: "ig-4",
-    image: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=500&q=80",
-    likes: 875,
-    caption: "Stack goals. Our 7.00ctw tennis bracelet paired with micro-eternity bands."
+    "id": "ig-4",
+    "image": "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=500&q=80",
+    "likes": 875,
+    "caption": "Stack goals. Our 7.00ctw tennis bracelet paired with micro-eternity bands."
   },
   {
-    id: "ig-5",
-    image: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?auto=format&fit=crop&w=500&q=80",
-    likes: 1120,
-    caption: "Step cuts for the vintage soul. Pure architectural poetry."
+    "id": "ig-5",
+    "image": "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?auto=format&fit=crop&w=500&q=80",
+    "likes": 1120,
+    "caption": "Step cuts for the vintage soul. Pure architectural poetry."
   },
   {
-    id: "ig-6",
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=500&q=80",
-    likes: 950,
-    caption: "Delivered to her door just in time for their anniversary. Certified IGI lab diamond studs."
+    "id": "ig-6",
+    "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=500&q=80",
+    "likes": 950,
+    "caption": "Delivered to her door just in time for their anniversary. Certified IGI lab diamond studs."
   }
 ];
-
-
