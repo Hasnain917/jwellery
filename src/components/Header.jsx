@@ -544,9 +544,9 @@ export default function Header({
               className="mega-menu-panel-fullwidth"
               style={{
                 width: '100vw',
-                height: '70vh',
-                minHeight: '70vh',
-                maxHeight: '70vh',
+                height: '55vh',
+                minHeight: '55vh',
+                maxHeight: '55vh',
                 backgroundColor: '#FFFFFF',
                 borderTop: '1px solid var(--border-soft)',
                 borderBottom: '1px solid var(--border-soft)',
@@ -555,7 +555,7 @@ export default function Header({
                 overflowY: 'auto',
                 display: 'flex',
                 alignItems: 'center',
-                padding: '2.5rem 0'
+                padding: '1.8rem 0'
               }}
             >
               <div 
@@ -569,21 +569,21 @@ export default function Header({
               >
                 {/* 1. ENGAGEMENT RINGS MEGA PANEL */}
                 {activeMegaMenu === 'engagement' && (
-                  <div style={{ display: 'grid', gridTemplateColumns: '2.2fr 1.3fr 1.3fr 1.6fr', gap: '2rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '2.5fr 1.3fr 1.3fr 1.8fr', gap: '2.5rem', alignItems: 'center' }}>
                     {/* Shapes */}
                     <div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
-                        <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.9rem' }}>
+                        <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600 }}>
                           Shop By Diamond Shape
                         </h4>
                         <button 
                           onClick={() => handleNavClick('shop', 'engagement-rings')}
-                          style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textDecoration: 'underline' }}
+                          style={{ fontSize: '0.82rem', color: 'var(--text-muted)', textDecoration: 'underline' }}
                         >
                           View All
                         </button>
                       </div>
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem 0.75rem' }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.55rem 0.9rem' }}>
                         {DIAMOND_SHAPES.map(shape => (
                           <button
                             key={shape.id}
@@ -591,10 +591,10 @@ export default function Header({
                             style={{
                               display: 'flex',
                               alignItems: 'center',
-                              gap: '0.5rem',
+                              gap: '0.75rem',
                               textAlign: 'left',
-                              padding: '0.35rem 0.4rem',
-                              fontSize: '0.74rem',
+                              padding: '0.45rem 0.6rem',
+                              fontSize: '0.88rem',
                               color: 'var(--text-charcoal)',
                               borderRadius: '4px',
                               transition: 'all 0.15s ease'
@@ -605,7 +605,7 @@ export default function Header({
                             <img 
                               src={shape.image} 
                               alt={shape.name} 
-                              style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover', border: '1px solid var(--border-soft)' }} 
+                              style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover', border: '1px solid var(--border-soft)' }} 
                             />
                             <span style={{ fontWeight: 500 }}>{shape.name}</span>
                           </button>
@@ -615,10 +615,10 @@ export default function Header({
 
                     {/* Setting Styles */}
                     <div>
-                      <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                      <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.9rem' }}>
                         Setting Styles
                       </h4>
-                      <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.76rem' }}>
+                      <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                         {[
                           'Solitaire Classics',
                           'Hidden Halo & Gallery',
@@ -630,8 +630,8 @@ export default function Header({
                           <li key={st}>
                             <button
                               onClick={() => handleNavClick('shop', 'engagement-rings')}
-                              style={{ color: 'var(--text-charcoal-light)', fontSize: '0.75rem', cursor: 'pointer', transition: 'transform 0.15s' }}
-                              onMouseEnter={e => e.currentTarget.style.transform = 'translateX(3px)'}
+                              style={{ color: 'var(--text-charcoal-light)', fontSize: '0.88rem', cursor: 'pointer', transition: 'transform 0.15s' }}
+                              onMouseEnter={e => e.currentTarget.style.transform = 'translateX(4px)'}
                               onMouseLeave={e => e.currentTarget.style.transform = 'translateX(0)'}
                             >
                               — {st}
@@ -643,53 +643,53 @@ export default function Header({
 
                     {/* Certifications */}
                     <div>
-                      <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                      <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.9rem' }}>
                         Stones & Metals
                       </h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                         <div 
                           onClick={() => handleNavClick('shop', 'engagement-rings')}
-                          style={{ padding: '0.6rem', backgroundColor: 'var(--bg-warm-ivory)', borderRadius: '4px', cursor: 'pointer', border: '1px solid var(--border-soft)' }}
+                          style={{ padding: '0.75rem 0.9rem', backgroundColor: 'var(--bg-warm-ivory)', borderRadius: '4px', cursor: 'pointer', border: '1px solid var(--border-soft)' }}
                         >
-                          <div style={{ fontWeight: 600, fontSize: '0.75rem' }}>IGI Lab-Grown Diamonds</div>
-                          <div style={{ fontSize: '0.66rem', color: 'var(--text-muted)' }}>100% Real Carbon • Type IIa</div>
+                          <div style={{ fontWeight: 600, fontSize: '0.88rem' }}>IGI Lab-Grown Diamonds</div>
+                          <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>100% Real Carbon • Type IIa</div>
                         </div>
                         <div 
                           onClick={() => handleNavClick('shop', 'engagement-rings')}
-                          style={{ padding: '0.6rem', backgroundColor: 'var(--bg-warm-ivory)', borderRadius: '4px', cursor: 'pointer', border: '1px solid var(--border-soft)' }}
+                          style={{ padding: '0.75rem 0.9rem', backgroundColor: 'var(--bg-warm-ivory)', borderRadius: '4px', cursor: 'pointer', border: '1px solid var(--border-soft)' }}
                         >
-                          <div style={{ fontWeight: 600, fontSize: '0.75rem' }}>GRA Moissanites</div>
-                          <div style={{ fontSize: '0.66rem', color: 'var(--text-muted)' }}>Supreme Optical Fire</div>
+                          <div style={{ fontWeight: 600, fontSize: '0.88rem' }}>GRA Moissanites</div>
+                          <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>Supreme Optical Fire</div>
                         </div>
                         <div 
                           onClick={() => handleNavClick('custom')}
-                          style={{ padding: '0.6rem', backgroundColor: '#FFFFFF', borderRadius: '4px', cursor: 'pointer', border: '1px dashed var(--border-soft)' }}
+                          style={{ padding: '0.75rem 0.9rem', backgroundColor: '#FFFFFF', borderRadius: '4px', cursor: 'pointer', border: '1px dashed var(--border-soft)' }}
                         >
-                          <div style={{ fontWeight: 600, fontSize: '0.75rem' }}>Solid Gold & 950 Platinum</div>
-                          <div style={{ fontSize: '0.66rem', color: 'var(--text-muted)' }}>Cast in Chicago atelier</div>
+                          <div style={{ fontWeight: 600, fontSize: '0.88rem' }}>Solid Gold & 950 Platinum</div>
+                          <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>Cast in Chicago atelier</div>
                         </div>
                       </div>
                     </div>
 
                     {/* Spotlight Box */}
-                    <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '1.2rem', borderRadius: '4px', border: '1px solid var(--border-soft)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '1.4rem 1.6rem', borderRadius: '6px', border: '1px solid var(--border-soft)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                       <div>
-                        <span style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>
+                        <span style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>
                           Chicago Atelier
                         </span>
-                        <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.1rem', margin: '0.3rem 0 0.5rem' }}>
+                        <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', margin: '0.4rem 0 0.6rem' }}>
                           Bespoke Engagement Ring
                         </h4>
-                        <p style={{ fontSize: '0.72rem', color: 'var(--text-charcoal-light)', lineHeight: 1.5 }}>
+                        <p style={{ fontSize: '0.84rem', color: 'var(--text-charcoal-light)', lineHeight: 1.55 }}>
                           Have a dream ring in mind? Bring your Pinterest board to life with photorealistic 3D CAD modeling. Delivered in 3–4 weeks.
                         </p>
                       </div>
                       <button 
                         onClick={() => handleNavClick('custom')}
                         className="btn btn-sm"
-                        style={{ backgroundColor: 'var(--text-charcoal)', color: '#FFFFFF', fontSize: '0.7rem', marginTop: '1rem', width: '100%' }}
+                        style={{ backgroundColor: 'var(--text-charcoal)', color: '#FFFFFF', fontSize: '0.82rem', padding: '0.7rem 1.2rem', marginTop: '1rem', width: '100%' }}
                       >
-                        <Sparkles size={11} />
+                        <Sparkles size={13} />
                         Start Custom Ring
                       </button>
                     </div>
@@ -698,17 +698,17 @@ export default function Header({
 
                 {/* 2. WEDDING BANDS MEGA PANEL */}
                 {activeMegaMenu === 'wedding' && (
-                  <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1.8fr 1.6fr', gap: '2rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1.8fr 1.6fr', gap: '2.5rem', alignItems: 'center' }}>
                     <div>
-                      <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                      <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.9rem' }}>
                         Curated Eternity Bands
                       </h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', fontSize: '0.76rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                         {['Radiant Cut Eternity Bands', 'Emerald Cut Eternity Bands', 'Round Brilliant Shared-Prong', 'East-West Oval Eternity', 'French Pavé Delicate Bands'].map(b => (
                           <button
                             key={b}
                             onClick={() => handleNavClick('shop', 'wedding-bands')}
-                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', padding: '0.2rem 0' }}
+                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', fontSize: '0.88rem', padding: '0.2rem 0' }}
                           >
                             — {b}
                           </button>
@@ -716,35 +716,35 @@ export default function Header({
                       </div>
                     </div>
                     <div>
-                      <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                      <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.9rem' }}>
                         Contour & Classic Bands
                       </h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', fontSize: '0.76rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                         {['Curved Contour & Nesting Bands', 'Comfort-Fit Plain Gold & Platinum', 'Baguette Bar-Set Bands', 'Men’s Satin & Hammered Bands', 'Custom Matching Band Service'].map(b => (
                           <button
                             key={b}
                             onClick={() => handleNavClick('shop', 'wedding-bands')}
-                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', padding: '0.2rem 0' }}
+                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', fontSize: '0.88rem', padding: '0.2rem 0' }}
                           >
                             — {b}
                           </button>
                         ))}
                       </div>
                     </div>
-                    <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '1.2rem', borderRadius: '4px', border: '1px solid var(--border-soft)' }}>
-                      <span style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>
+                    <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '1.4rem 1.6rem', borderRadius: '6px', border: '1px solid var(--border-soft)' }}>
+                      <span style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>
                         Bridal Stacks
                       </span>
-                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.1rem', margin: '0.3rem 0 0.5rem' }}>
+                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', margin: '0.4rem 0 0.6rem' }}>
                         Matching Band Guarantee
                       </h4>
-                      <p style={{ fontSize: '0.72rem', color: 'var(--text-charcoal-light)', lineHeight: 1.5, marginBottom: '1rem' }}>
+                      <p style={{ fontSize: '0.84rem', color: 'var(--text-charcoal-light)', lineHeight: 1.55, marginBottom: '1rem' }}>
                         We custom-contour any wedding band flush against your engagement ring so there is zero gap.
                       </p>
                       <button 
                         onClick={() => handleNavClick('shop', 'wedding-bands')}
                         className="btn btn-outline btn-sm"
-                        style={{ width: '100%', fontSize: '0.7rem', borderColor: 'var(--text-charcoal)' }}
+                        style={{ width: '100%', fontSize: '0.82rem', padding: '0.7rem 1.2rem', borderColor: 'var(--text-charcoal)' }}
                       >
                         Explore Wedding Bands
                       </button>
@@ -754,17 +754,17 @@ export default function Header({
 
                 {/* 3. TENNIS BRACELETS MEGA PANEL */}
                 {activeMegaMenu === 'bracelets' && (
-                  <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1.8fr 1.6fr', gap: '2rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1.8fr 1.6fr', gap: '2.5rem', alignItems: 'center' }}>
                     <div>
-                      <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                      <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.9rem' }}>
                         Bracelet Styles
                       </h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', fontSize: '0.76rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                         {['Classic 4-Prong Tennis Bracelet', 'Minimal 3-Prong Tennis Line', 'Emerald Cut Statement Line', 'Bezel Cup Diamond Link', 'Solid Cuffs & Bangle Stacks'].map(b => (
                           <button
                             key={b}
                             onClick={() => handleNavClick('shop', 'bracelets')}
-                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', padding: '0.2rem 0' }}
+                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', fontSize: '0.88rem', padding: '0.2rem 0' }}
                           >
                             — {b}
                           </button>
@@ -772,35 +772,35 @@ export default function Header({
                       </div>
                     </div>
                     <div>
-                      <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                      <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.9rem' }}>
                         Carat Brackets
                       </h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', fontSize: '0.76rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                         {['3.00 ctw — Everyday Subtle Elegance', '5.00 ctw — Signature Fine Luxury', '7.00 ctw — Command Presence', '10.00+ ctw — Haute Joaillerie Investment', 'Custom Length Sizing (6.5" to 8")'].map(b => (
                           <button
                             key={b}
                             onClick={() => handleNavClick('shop', 'bracelets')}
-                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', padding: '0.2rem 0' }}
+                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', fontSize: '0.88rem', padding: '0.2rem 0' }}
                           >
                             — {b}
                           </button>
                         ))}
                       </div>
                     </div>
-                    <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '1.2rem', borderRadius: '4px', border: '1px solid var(--border-soft)' }}>
-                      <span style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>
+                    <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '1.4rem 1.6rem', borderRadius: '6px', border: '1px solid var(--border-soft)' }}>
+                      <span style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>
                         Craftsmanship
                       </span>
-                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.1rem', margin: '0.3rem 0 0.5rem' }}>
+                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', margin: '0.4rem 0 0.6rem' }}>
                         Double Safety Clasp
                       </h4>
-                      <p style={{ fontSize: '0.72rem', color: 'var(--text-charcoal-light)', lineHeight: 1.5, marginBottom: '1rem' }}>
+                      <p style={{ fontSize: '0.84rem', color: 'var(--text-charcoal-light)', lineHeight: 1.55, marginBottom: '1rem' }}>
                         Each bracelet features fluid articulating links in solid gold with a reinforced double-figure-eight lock.
                       </p>
                       <button 
                         onClick={() => handleNavClick('shop', 'bracelets')}
                         className="btn btn-outline btn-sm"
-                        style={{ width: '100%', fontSize: '0.7rem', borderColor: 'var(--text-charcoal)' }}
+                        style={{ width: '100%', fontSize: '0.82rem', padding: '0.7rem 1.2rem', borderColor: 'var(--text-charcoal)' }}
                       >
                         Shop Tennis Bracelets
                       </button>
@@ -810,17 +810,17 @@ export default function Header({
 
                 {/* 4. DIAMOND STUDS MEGA PANEL */}
                 {activeMegaMenu === 'studs' && (
-                  <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1.8fr 1.6fr', gap: '2rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1.8fr 1.6fr', gap: '2.5rem', alignItems: 'center' }}>
                     <div>
-                      <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                      <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.9rem' }}>
                         Solitaire Studs
                       </h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', fontSize: '0.76rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                         {['Round Brilliant 4-Prong Basket', 'Round Martini 3-Prong Low Profile', 'Radiant Cut Solitaire Studs', 'Princess & Cushion Studs', 'Protective Bezel Setting Studs'].map(s => (
                           <button
                             key={s}
                             onClick={() => handleNavClick('shop', 'earrings')}
-                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', padding: '0.2rem 0' }}
+                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', fontSize: '0.88rem', padding: '0.2rem 0' }}
                           >
                             — {s}
                           </button>
@@ -828,35 +828,35 @@ export default function Header({
                       </div>
                     </div>
                     <div>
-                      <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                      <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.9rem' }}>
                         Carat Weights (Pair)
                       </h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', fontSize: '0.76rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                         {['1.00 ctw (0.50 ct each)', '2.00 ctw (1.00 ct each)', '3.00 ctw (1.50 ct each)', '4.00 ctw (2.00 ct each)', 'Screw-back & La Pousette Backings'].map(s => (
                           <button
                             key={s}
                             onClick={() => handleNavClick('shop', 'earrings')}
-                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', padding: '0.2rem 0' }}
+                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', fontSize: '0.88rem', padding: '0.2rem 0' }}
                           >
                             — {s}
                           </button>
                         ))}
                       </div>
                     </div>
-                    <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '1.2rem', borderRadius: '4px', border: '1px solid var(--border-soft)' }}>
-                      <span style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>
+                    <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '1.4rem 1.6rem', borderRadius: '6px', border: '1px solid var(--border-soft)' }}>
+                      <span style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>
                         Certification
                       </span>
-                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.1rem', margin: '0.3rem 0 0.5rem' }}>
+                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', margin: '0.4rem 0 0.6rem' }}>
                         Matched Pair Dossier
                       </h4>
-                      <p style={{ fontSize: '0.72rem', color: 'var(--text-charcoal-light)', lineHeight: 1.5, marginBottom: '1rem' }}>
+                      <p style={{ fontSize: '0.84rem', color: 'var(--text-charcoal-light)', lineHeight: 1.55, marginBottom: '1rem' }}>
                         Every pair of earrings is optically color and clarity matched with laser-inscribed IGI certificates.
                       </p>
                       <button 
                         onClick={() => handleNavClick('shop', 'earrings')}
                         className="btn btn-outline btn-sm"
-                        style={{ width: '100%', fontSize: '0.7rem', borderColor: 'var(--text-charcoal)' }}
+                        style={{ width: '100%', fontSize: '0.82rem', padding: '0.7rem 1.2rem', borderColor: 'var(--text-charcoal)' }}
                       >
                         Explore Diamond Studs
                       </button>
@@ -866,17 +866,17 @@ export default function Header({
 
                 {/* 5. NECKLACES MEGA PANEL */}
                 {activeMegaMenu === 'necklaces' && (
-                  <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1.8fr 1.6fr', gap: '2rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1.8fr 1.6fr', gap: '2.5rem', alignItems: 'center' }}>
                     <div>
-                      <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                      <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.9rem' }}>
                         Solitaire Pendants
                       </h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', fontSize: '0.76rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                         {['Round Solitaire Floating Pendant', 'Emerald Cut Minimalist Bezel', 'Pear Drop Solitaire Pendant', 'East-West Marquise Pendant', 'Radiant Cut Halo Pendant'].map(n => (
                           <button
                             key={n}
                             onClick={() => handleNavClick('shop', 'necklaces')}
-                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', padding: '0.2rem 0' }}
+                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', fontSize: '0.88rem', padding: '0.2rem 0' }}
                           >
                             — {n}
                           </button>
@@ -884,35 +884,35 @@ export default function Header({
                       </div>
                     </div>
                     <div>
-                      <h4 style={{ fontSize: '0.68rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.85rem' }}>
+                      <h4 style={{ fontSize: '0.86rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-charcoal)', fontWeight: 600, marginBottom: '0.9rem' }}>
                         Chain & Metal Lengths
                       </h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem', fontSize: '0.76rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                         {['Solid 14K Cable Chain 16-18" Adjustable', 'Solid 14K Wheat & Rope Chains', '14k White Gold, Yellow & Rose', '950 Platinum Pendants', 'Bespoke Initial & Letter Charms'].map(n => (
                           <button
                             key={n}
                             onClick={() => handleNavClick('shop', 'necklaces')}
-                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', padding: '0.2rem 0' }}
+                            style={{ textAlign: 'left', color: 'var(--text-charcoal-light)', fontSize: '0.88rem', padding: '0.2rem 0' }}
                           >
                             — {n}
                           </button>
                         ))}
                       </div>
                     </div>
-                    <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '1.2rem', borderRadius: '4px', border: '1px solid var(--border-soft)' }}>
-                      <span style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>
+                    <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '1.4rem 1.6rem', borderRadius: '6px', border: '1px solid var(--border-soft)' }}>
+                      <span style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 600 }}>
                         Fine Jewelry
                       </span>
-                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.1rem', margin: '0.3rem 0 0.5rem' }}>
+                      <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', margin: '0.4rem 0 0.6rem' }}>
                         Ready to Ship in 24h
                       </h4>
-                      <p style={{ fontSize: '0.72rem', color: 'var(--text-charcoal-light)', lineHeight: 1.5, marginBottom: '1rem' }}>
+                      <p style={{ fontSize: '0.84rem', color: 'var(--text-charcoal-light)', lineHeight: 1.55, marginBottom: '1rem' }}>
                         Our solitaire pendants make the ultimate timeless anniversary or milestone gift with overnight FedEx shipping.
                       </p>
                       <button 
                         onClick={() => handleNavClick('shop', 'necklaces')}
                         className="btn btn-outline btn-sm"
-                        style={{ width: '100%', fontSize: '0.7rem', borderColor: 'var(--text-charcoal)' }}
+                        style={{ width: '100%', fontSize: '0.82rem', padding: '0.7rem 1.2rem', borderColor: 'var(--text-charcoal)' }}
                       >
                         Shop Pendants & Necklaces
                       </button>
@@ -922,42 +922,42 @@ export default function Header({
 
                 {/* 6. BESPOKE CUSTOM ATELIER MEGA PANEL */}
                 {activeMegaMenu === 'custom' && (
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
-                    <div style={{ padding: '0.8rem', borderRight: '1px solid var(--border-soft)' }}>
-                      <div style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-charcoal)', marginBottom: '0.4rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.8rem', alignItems: 'center' }}>
+                    <div style={{ padding: '1rem', borderRight: '1px solid var(--border-soft)' }}>
+                      <div style={{ fontSize: '0.86rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-charcoal)', marginBottom: '0.5rem' }}>
                         Step 1: Consultation
                       </div>
-                      <p style={{ fontSize: '0.74rem', color: 'var(--text-charcoal-light)', lineHeight: 1.45 }}>
+                      <p style={{ fontSize: '0.86rem', color: 'var(--text-charcoal-light)', lineHeight: 1.55 }}>
                         Share Pinterest sketches, stone desires, and ring size. Free private video or showroom session.
                       </p>
                     </div>
-                    <div style={{ padding: '0.8rem', borderRight: '1px solid var(--border-soft)' }}>
-                      <div style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-charcoal)', marginBottom: '0.4rem' }}>
+                    <div style={{ padding: '1rem', borderRight: '1px solid var(--border-soft)' }}>
+                      <div style={{ fontSize: '0.86rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-charcoal)', marginBottom: '0.5rem' }}>
                         Step 2: 3D CAD Preview
                       </div>
-                      <p style={{ fontSize: '0.74rem', color: 'var(--text-charcoal-light)', lineHeight: 1.45 }}>
+                      <p style={{ fontSize: '0.86rem', color: 'var(--text-charcoal-light)', lineHeight: 1.55 }}>
                         Inspect photorealistic 3D renders from every angle. Unlimited revisions until you say it's perfect.
                       </p>
                     </div>
-                    <div style={{ padding: '0.8rem', borderRight: '1px solid var(--border-soft)' }}>
-                      <div style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-charcoal)', marginBottom: '0.4rem' }}>
+                    <div style={{ padding: '1rem', borderRight: '1px solid var(--border-soft)' }}>
+                      <div style={{ fontSize: '0.86rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-charcoal)', marginBottom: '0.5rem' }}>
                         Step 3: Chicago Casting
                       </div>
-                      <p style={{ fontSize: '0.74rem', color: 'var(--text-charcoal-light)', lineHeight: 1.45 }}>
+                      <p style={{ fontSize: '0.86rem', color: 'var(--text-charcoal-light)', lineHeight: 1.55 }}>
                         Cast in recycled solid gold or platinum and micro-set by hand on Jewelers Row, Chicago.
                       </p>
                     </div>
-                    <div style={{ padding: '0.8rem', backgroundColor: 'var(--bg-warm-ivory)', borderRadius: '4px' }}>
-                      <div style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-charcoal)', marginBottom: '0.4rem' }}>
+                    <div style={{ padding: '1.2rem', backgroundColor: 'var(--bg-warm-ivory)', borderRadius: '6px' }}>
+                      <div style={{ fontSize: '0.86rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-charcoal)', marginBottom: '0.5rem' }}>
                         Step 4: Insured Delivery
                       </div>
-                      <p style={{ fontSize: '0.74rem', color: 'var(--text-charcoal-light)', lineHeight: 1.45, marginBottom: '0.8rem' }}>
+                      <p style={{ fontSize: '0.86rem', color: 'var(--text-charcoal-light)', lineHeight: 1.55, marginBottom: '1rem' }}>
                         Discreet FedEx Priority Overnight delivery with certificate and hardwood box.
                       </p>
                       <button
                         onClick={() => handleNavClick('custom')}
                         className="btn btn-sm"
-                        style={{ backgroundColor: 'var(--text-charcoal)', color: '#FFFFFF', fontSize: '0.68rem', width: '100%' }}
+                        style={{ backgroundColor: 'var(--text-charcoal)', color: '#FFFFFF', fontSize: '0.82rem', padding: '0.7rem 1.2rem', width: '100%' }}
                       >
                         Start Custom Ring
                       </button>

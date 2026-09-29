@@ -651,9 +651,9 @@ html {
 
 .mega-menu-panel-fullwidth {
   width: 100vw !important;
-  height: 70vh !important;
-  min-height: 70vh !important;
-  max-height: 70vh !important;
+  height: 55vh !important;
+  min-height: 55vh !important;
+  max-height: 55vh !important;
   background-color: #FFFFFF !important;
   border-top: 1px solid var(--border-soft) !important;
   border-bottom: 1px solid var(--border-soft) !important;
@@ -663,7 +663,7 @@ html {
   align-items: center !important;
 }
 
-/* Custom Scrollbar for Mega Menu if content exceeds 70vh on low-res screens */
+/* Custom Scrollbar for Mega Menu if content exceeds 55vh on low-res screens */
 .mega-menu-panel-fullwidth::-webkit-scrollbar {
   width: 5px;
 }
