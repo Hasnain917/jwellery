@@ -15,6 +15,7 @@ import {
   RotateCcw
 } from 'lucide-react';
 import { DIAMOND_SHAPES, CATEGORIES } from '../data/jewelryData';
+import ProductCardMedia from './ProductCardMedia';
 
 export default function ShopPage({ 
   products = [], 
@@ -655,24 +656,15 @@ export default function ShopPage({
                       onClick={() => handleCardClick(product)}
                       style={{ cursor: 'pointer' }}
                     >
-                      {/* Image Wrap */}
-                      <div className="product-img-wrap" style={{ position: 'relative', overflow: 'hidden', aspectRatio: '1/1', backgroundColor: '#FFFFFF', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.1rem' }}>
-                        <img 
-                          src={product.primaryImage} 
-                          alt={product.name}
-                          className="primary-img"
-                          loading="lazy"
-                          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', transition: 'transform 0.5s ease' }}
+                      {/* Image Wrap with 2s Video & Sparkle Animation */}
+                      <div className="product-img-wrap" style={{ position: 'relative', overflow: 'hidden', aspectRatio: '1/1', backgroundColor: '#FFFFFF', borderRadius: '4px', padding: 0 }}>
+                        <ProductCardMedia 
+                          primaryImage={product.primaryImage}
+                          secondaryImage={product.secondaryImage}
+                          name={product.name}
+                          videoUrl={product.videoUrl || "/videos/product-preview.mp4"}
+                          padding="1.15rem"
                         />
-                        {product.secondaryImage && (
-                          <img 
-                            src={product.secondaryImage} 
-                            alt={`${product.name} alternate angle`}
-                            className="secondary-img"
-                            style={{ position: 'absolute', inset: '1.1rem', width: 'calc(100% - 2.2rem)', height: 'calc(100% - 2.2rem)', objectFit: 'contain', objectPosition: 'center', opacity: 0, transition: 'opacity 0.4s ease' }}
-                            loading="lazy"
-                          />
-                        )}
 
                         {/* Top Badges */}
                         <div style={{ position: 'absolute', top: '0.75rem', left: '0.75rem', display: 'flex', flexDirection: 'column', gap: '0.35rem', zIndex: 2 }}>

@@ -12,6 +12,7 @@ import {
   ArrowRight,
   ShieldCheck
 } from 'lucide-react';
+import ProductCardMedia from './ProductCardMedia';
 
 export default function BestSellersGrid({ 
   products, 
@@ -352,53 +353,25 @@ export default function BestSellersGrid({
                   if (actions) actions.style.opacity = '0';
                 }}
               >
-                {/* Image Showcase Frame with Contain Ratio */}
+                {/* Image Showcase Frame with Contain Ratio & 2s Video on Hover */}
                 <div 
                   className="product-img-wrap"
                   style={{
                     position: 'relative',
                     aspectRatio: '1 / 1',
                     backgroundColor: '#FFFFFF',
-                    padding: '1.4rem',
+                    padding: 0,
                     overflow: 'hidden',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
                     borderBottom: '1px solid var(--border-soft)'
                   }}
                 >
-                  {/* Primary Product Photo */}
-                  <img 
-                    src={product.primaryImage} 
-                    alt={product.name}
-                    className="primary-img"
-                    loading="lazy"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'contain',
-                      transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
-                    }}
+                  <ProductCardMedia 
+                    primaryImage={product.primaryImage}
+                    secondaryImage={product.secondaryImage}
+                    name={product.name}
+                    videoUrl={product.videoUrl || "/videos/product-preview.mp4"}
+                    padding="1.35rem"
                   />
-
-                  {/* Secondary Photo Crossfade */}
-                  {product.secondaryImage && (
-                    <img 
-                      src={product.secondaryImage} 
-                      alt={`${product.name} alternate angle`}
-                      className="secondary-img"
-                      style={{
-                        position: 'absolute',
-                        inset: '1.4rem',
-                        width: 'calc(100% - 2.8rem)',
-                        height: 'calc(100% - 2.8rem)',
-                        objectFit: 'contain',
-                        opacity: 0,
-                        transition: 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
-                      }}
-                      loading="lazy"
-                    />
-                  )}
 
                   {/* Top Left: Luxury Certification & Carat Badges */}
                   <div 

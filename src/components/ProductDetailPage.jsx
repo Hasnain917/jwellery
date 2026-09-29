@@ -21,6 +21,7 @@ import {
   ChevronUp
 } from 'lucide-react';
 import { CATEGORIES } from '../data/jewelryData';
+import ProductCardMedia from './ProductCardMedia';
 
 const RING_SIZES = [
   "4.0", "4.5", "5.0", "5.5", "6.0", "6.5", "7.0", "7.5", "8.0", "8.5", "9.0", "9.5", "10.0"
@@ -185,7 +186,7 @@ export default function ProductDetailPage({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '1.5rem',
+                padding: '0',
                 boxShadow: 'var(--shadow-card)'
               }}
             >
@@ -204,7 +205,7 @@ export default function ProductDetailPage({
                   fontWeight: 600,
                   padding: '0.35rem 0.75rem',
                   borderRadius: '2px',
-                  zIndex: 2,
+                  zIndex: 10,
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.35rem'
@@ -214,17 +215,14 @@ export default function ProductDetailPage({
                 {product.badge || 'IGI Certified Fine Jewelry'}
               </div>
 
-              {/* Main Image */}
-              <img 
-                src={activeImage} 
-                alt={product.name}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain',
-                  objectPosition: 'center',
-                  transition: 'transform 0.5s ease'
-                }}
+              {/* Main Showcase with 2s Studio Video on Hover */}
+              <ProductCardMedia 
+                primaryImage={activeImage}
+                name={product.name}
+                videoUrl={product.videoUrl || "/videos/product-preview.mp4"}
+                aspectRatio="1 / 1"
+                padding="2rem"
+                isDetailView={true}
               />
             </div>
 

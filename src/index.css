@@ -782,3 +782,81 @@ html {
   }
 }
 
+/* ========================================================
+   CUTE DIAMOND SPARKLE & HOVER VIDEO ANIMATIONS
+   ======================================================== */
+.diamond-shine-beam {
+  transform: translateX(-150%) skewX(-25deg);
+  transition: opacity 0.2s ease;
+}
+
+.animate-beam {
+  opacity: 0.8 !important;
+  animation: diamondShineSweep 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+@keyframes diamondShineSweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.75;
+  }
+  80% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+.cute-sparkle {
+  pointer-events: none;
+  animation: cuteSparkleTwinkle 1.8s infinite ease-in-out;
+}
+
+.sparkle-1 {
+  animation-delay: 0.1s;
+}
+
+.sparkle-2 {
+  animation-delay: 0.5s;
+}
+
+.sparkle-3 {
+  animation-delay: 0.9s;
+}
+
+@keyframes cuteSparkleTwinkle {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.35) rotate(45deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.95));
+  }
+  60% {
+    transform: scale(0.85) rotate(90deg);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(0) rotate(135deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cutePulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
