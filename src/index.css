@@ -675,3 +675,97 @@ html {
   border-radius: 99px;
 }
 
+/* ========================================================
+   LOVE IN THE MAKING — EDITORIAL MOSAIC COLLAGE
+   ======================================================== */
+.mosaic-photo-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mosaic-photo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.mosaic-photo-card:hover img {
+  transform: scale(1.05);
+}
+
+.mosaic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18, 18, 18, 0.82) 0%, rgba(18, 18, 18, 0.3) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justifyContent: flex-end;
+  padding: 1.25rem 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #FFFFFF;
+}
+
+.mosaic-photo-card:hover .mosaic-overlay {
+  opacity: 1;
+}
+
+.mosaic-tag {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.mosaic-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.mosaic-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.mosaic-hero-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mosaic-hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+}
+
+.mosaic-browse-btn:hover {
+  border-bottom-color: #FFFFFF !important;
+}
+
+.mosaic-browse-btn:hover span:last-child {
+  background-color: #FFFFFF;
+  color: #141414;
+}
+
+@media (max-width: 900px) {
+  .editorial-mosaic-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .editorial-mosaic-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+

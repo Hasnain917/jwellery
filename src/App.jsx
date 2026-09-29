@@ -11,6 +11,7 @@ import ShopByCategory from './components/ShopByCategory';
 import SplitBanner from './components/SplitBanner';
 import WhyAviJewelers from './components/WhyAviJewelers';
 import LoveStories from './components/LoveStories';
+import LoveInTheMaking from './components/LoveInTheMaking';
 import FaqSection from './components/FaqSection';
 import InstagramStrip from './components/InstagramStrip';
 import Footer from './components/Footer';
@@ -335,7 +336,15 @@ export default function App() {
               <LoveStories />
             </div>
 
-            {/* 11. FAQ Accordion */}
+            {/* 11. Editorial Mosaic: Love in the Making */}
+            <div className="reveal-on-scroll">
+              <LoveInTheMaking 
+                onStartCustom={() => navigateTo('custom')}
+                onExploreWork={() => navigateTo('shop', 'engagement-rings')}
+              />
+            </div>
+
+            {/* 12. FAQ Accordion */}
             <div className="reveal-on-scroll">
               <FaqSection 
                 onStartCustom={() => navigateTo('custom')}
