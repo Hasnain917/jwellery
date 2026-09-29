@@ -1,0 +1,677 @@
+/* ==========================================================================
+   AVI JEWELERS USA — LUXURY DESIGN SYSTEM
+   Chicago Bespoke Fine Jewelry Atelier
+   ========================================================================== */
+
+:root {
+  /* Brand Palette */
+  --bg-warm-ivory: #FAF7F2;
+  --bg-card: #FFFFFF;
+  --bg-card-subtle: #F6F2EC;
+  --bg-cream-tint: #F2ECE4;
+  --bg-dark-charcoal: #151515;
+  --bg-deep-charcoal: #1C1C1C;
+  
+  --text-charcoal: #1C1C1C;
+  --text-charcoal-light: #524E48;
+  --text-muted: #7E7870;
+  --text-inverse: #FAF7F2;
+
+  /* Accent Tokens (Monochrome Haute-Joaillerie Palette — Zero Gold) */
+  --gold-primary: #121212;
+  --gold-hover: #2C2C2C;
+  --gold-light: #F0ECE5;
+  --gold-muted: #6B665E;
+  --gold-glow: rgba(18, 18, 18, 0.12);
+  
+  --border-soft: #E4DFD6;
+  --border-subtle: #ECE8E0;
+  --border-gold: #D2CDC4;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-serif-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Shadows & Depth */
+  --shadow-subtle: 0 4px 20px rgba(28, 28, 28, 0.04);
+  --shadow-card: 0 10px 30px rgba(28, 28, 28, 0.06);
+  --shadow-hover: 0 18px 45px rgba(28, 28, 28, 0.1);
+  --shadow-gold: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-modal: 0 25px 60px rgba(0, 0, 0, 0.25);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --max-width: 1360px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+}
+
+/* CSS Reset & Defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-warm-ivory);
+  color: var(--text-charcoal);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-warm-ivory);
+  color: var(--text-charcoal);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-warm-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: #C4C0B6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #121212;
+}
+
+/* Typography Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--text-charcoal);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  color: var(--text-charcoal-light);
+  font-size: 0.98rem;
+  font-weight: 350;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Containers */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.2rem, 4vw, 3rem);
+  padding-right: clamp(1.2rem, 4vw, 3rem);
+}
+
+.section-padding {
+  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold-primary);
+  margin-bottom: 0.75rem;
+}
+
+.subheading {
+  font-size: 1.05rem;
+  color: var(--text-charcoal-light);
+  margin-top: 1rem;
+}
+
+/* Luxury Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.95rem 2rem;
+  font-size: 0.84rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-gold {
+  background-color: var(--text-charcoal);
+  color: #FFFFFF;
+  border: 1px solid var(--text-charcoal);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-gold:hover {
+  background-color: #2C2C2C;
+  border-color: #2C2C2C;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-charcoal);
+  border: 1px solid var(--text-charcoal);
+}
+
+.btn-outline:hover {
+  background-color: var(--text-charcoal);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--text-charcoal);
+  border: 1px solid var(--text-charcoal);
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--text-charcoal);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-white {
+  background: #FFFFFF;
+  color: var(--text-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.btn-white:hover {
+  background: var(--bg-warm-ivory);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.btn-sm {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.btn-lg {
+  padding: 1.15rem 2.5rem;
+  font-size: 0.9rem;
+}
+
+/* Badges */
+.badge-gold {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.28rem 0.65rem;
+  background: #EDEAE4;
+  color: var(--text-charcoal);
+  border: 1px solid #D2CDC4;
+  border-radius: var(--radius-sm);
+}
+
+.badge-dark {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.28rem 0.65rem;
+  background: var(--text-charcoal);
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+}
+
+/* Subtle Fade & Slide Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGold {
+  0% { box-shadow: 0 0 0 0 rgba(18, 18, 18, 0.25); }
+  70% { box-shadow: 0 0 0 10px rgba(18, 18, 18, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(18, 18, 18, 0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Sticky Header with Backdrop Blur */
+.header-glass {
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* Mega Menu Overlay */
+.mega-menu-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 20px 45px rgba(28, 28, 28, 0.08);
+  animation: fadeIn 0.25s ease-out;
+  z-index: 100;
+}
+
+/* Card Hover Zoom */
+.product-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--border-gold);
+}
+
+.product-img-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: #F9F7F4;
+  overflow: hidden;
+}
+
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.product-card:hover .product-img-wrap img.primary-img {
+  transform: scale(1.06);
+}
+
+.product-card:hover .product-img-wrap img.secondary-img {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+
+/* Floating Action Button (Mobile Call / WhatsApp) */
+.floating-action-bar {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.floating-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-fast);
+  color: #FFFFFF;
+}
+
+.floating-btn:hover {
+  transform: scale(1.08);
+}
+
+.floating-btn-phone {
+  background: #111111;
+}
+
+.floating-btn-whatsapp {
+  background: #25D366;
+}
+
+/* Responsive visibility & drawer utilities */
+.show-mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 992px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .show-mobile-only {
+    display: flex !important;
+  }
+  .shop-layout-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .filter-sidebar {
+    display: none;
+  }
+  .filter-sidebar.mobile-open {
+    display: block !important;
+    margin-bottom: 2rem;
+  }
+  .floating-action-bar.show-mobile-only {
+    display: flex !important;
+  }
+}
+
+/* Shapes Carousel Track Styling */
+.shapes-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+.shapes-carousel-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Category Tiles 5-Grid Desktop Layout */
+.shop-by-category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+  .shop-by-category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-by-category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-by-category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Luxury Category Nav Links */
+.category-nav-link {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-charcoal);
+  padding: 0.45rem 0.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.category-nav-link:hover {
+  color: #121212;
+}
+
+.category-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background-color: #121212;
+  transition: all 0.25s ease;
+  transform: translateX(-50%);
+}
+
+.category-nav-link:hover::after,
+.category-nav-link.active::after {
+  width: 85%;
+}
+
+/* Mega Menu Dropdown Styling */
+.mega-menu-bridge {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding-top: 0.5rem;
+  z-index: 1000;
+  animation: megaFade 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes megaFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   4 & 5. SMOOTH SCROLLING & GLOBAL ANIMATION TRANSITIONS
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll-triggered reveal animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay helper classes */
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+.stagger-5 { transition-delay: 0.40s; }
+
+/* Image hover micro-animations */
+.product-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.product-img-wrap {
+  overflow: hidden;
+}
+
+.product-img-wrap img.primary-img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-img-wrap img.primary-img {
+  transform: scale(1.06);
+}
+
+.product-card:hover .product-img-wrap img.secondary-img {
+  opacity: 1 !important;
+  transform: scale(1.06);
+}
+
+/* Category & Shape tiles zoom transition */
+.category-tile-img, .shape-tile-img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.category-tile:hover .category-tile-img,
+.shape-tile:hover .shape-tile-img {
+  transform: scale(1.065);
+}
+
+/* Button smooth hover elevation */
+.btn {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn:hover {
+  transform: translateY(-1.5px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Haute Joaillerie Full-Width 70vh Mega Menu */
+.mega-menu-bridge.full-width {
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  padding-top: 0 !important;
+  animation: megaMenuDropdown 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes megaMenuDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mega-menu-panel-fullwidth {
+  width: 100vw !important;
+  height: 70vh !important;
+  min-height: 70vh !important;
+  max-height: 70vh !important;
+  background-color: #FFFFFF !important;
+  border-top: 1px solid var(--border-soft) !important;
+  border-bottom: 1px solid var(--border-soft) !important;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12) !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Custom Scrollbar for Mega Menu if content exceeds 70vh on low-res screens */
+.mega-menu-panel-fullwidth::-webkit-scrollbar {
+  width: 5px;
+}
+.mega-menu-panel-fullwidth::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+.mega-menu-panel-fullwidth::-webkit-scrollbar-thumb {
+  background: #D2CDC4;
+  border-radius: 99px;
+}
+
