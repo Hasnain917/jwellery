@@ -10,7 +10,6 @@ import BestSellersGrid from './components/BestSellersGrid';
 import ShopByCategory from './components/ShopByCategory';
 import SplitBanner from './components/SplitBanner';
 import WhyAviJewelers from './components/WhyAviJewelers';
-import LoveStories from './components/LoveStories';
 import LoveInTheMaking from './components/LoveInTheMaking';
 import FaqSection from './components/FaqSection';
 import InstagramStrip from './components/InstagramStrip';
@@ -331,12 +330,7 @@ export default function App() {
               />
             </div>
 
-            {/* 10. Client Love Stories (Testimonial Carousel) */}
-            <div className="reveal-on-scroll">
-              <LoveStories />
-            </div>
-
-            {/* 11. Editorial Mosaic: Love in the Making */}
+            {/* 10. Editorial Mosaic: Love in the Making */}
             <div className="reveal-on-scroll">
               <LoveInTheMaking 
                 onStartCustom={() => navigateTo('custom')}
