@@ -1669,8 +1669,10 @@ export const INSTAGRAM_POSTS = [
   {
     "id": "ig-1",
     "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80",
+    "video": "/videos/product-video-1.mov",
+    "isVideo": true,
     "likes": 1240,
-    "caption": "Another Chicago love story begins. 3.00ct custom oval in bespoke 18k yellow gold."
+    "caption": "Another Chicago love story begins. 3.20ct custom oval in bespoke solid platinum."
   },
   {
     "id": "ig-2",
@@ -1681,20 +1683,26 @@ export const INSTAGRAM_POSTS = [
   {
     "id": "ig-3",
     "image": "https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=500&q=80",
+    "video": "/videos/product-video-7.mp4",
+    "isVideo": true,
     "likes": 1410,
-    "caption": "Radiant cuts hit differently in natural sunlight. Handcrafted in our Chicago studio."
+    "caption": "Bespoke trilogy diamond ring hits differently in Chicago atelier light."
   },
   {
     "id": "ig-4",
     "image": "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=500&q=80",
+    "video": "/videos/product-video-8.mp4",
+    "isVideo": true,
     "likes": 875,
-    "caption": "Stack goals. Our 7.00ctw tennis bracelet paired with micro-eternity bands."
+    "caption": "Stack goals. Our 10.0ctw diamond tennis bracelet handcrafted in 14k white gold."
   },
   {
     "id": "ig-5",
     "image": "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?auto=format&fit=crop&w=500&q=80",
+    "video": "/videos/product-video-11.mp4",
+    "isVideo": true,
     "likes": 1120,
-    "caption": "Step cuts for the vintage soul. Pure architectural poetry."
+    "caption": "Toi et Moi duet ring. Pure architectural poetry in motion."
   },
   {
     "id": "ig-6",

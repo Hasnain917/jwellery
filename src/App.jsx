@@ -12,6 +12,7 @@ import SplitBanner from './components/SplitBanner';
 import WhyAviJewelers from './components/WhyAviJewelers';
 import LoveInTheMaking from './components/LoveInTheMaking';
 import FaqSection from './components/FaqSection';
+import VideoCarouselSection from './components/VideoCarouselSection';
 import InstagramStrip from './components/InstagramStrip';
 import Footer from './components/Footer';
 
@@ -296,7 +297,19 @@ export default function App() {
               />
             </div>
 
-            {/* 6. Best Sellers Grid (8 Products with Dual Hover Image & Direct PDP Links) */}
+            {/* 6. Live Diamond Brilliance in Motion (4K Video Card Carousel) */}
+            <div className="reveal-on-scroll">
+              <VideoCarouselSection 
+                onStartCustom={(ringName) => {
+                  if (ringName) {
+                    setCustomPrefill({ name: ringName });
+                  }
+                  navigateTo('custom');
+                }}
+              />
+            </div>
+
+            {/* 7. Best Sellers Grid (8 Products with Dual Hover Image & Direct PDP Links) */}
             <div className="reveal-on-scroll">
               <BestSellersGrid 
                 products={products}

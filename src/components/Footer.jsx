@@ -129,21 +129,17 @@ export default function Footer({ onNavigate, onOpenCustom }) {
         >
           {/* Column 1: Brand & Atelier Story */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.35rem', marginBottom: '0.4rem' }}>
-              <span 
-                style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '1.6rem',
-                  letterSpacing: '0.12em',
-                  fontWeight: 500,
-                  color: '#FAF7F2'
-                }}
-              >
-                AVI JEWELERS
-              </span>
-              <span style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--gold-primary)' }}>
-                USA
-              </span>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.8rem', marginBottom: '1rem' }}>
+              <img 
+                src="/images/avi-jewelers-logo-gold.png" 
+                alt="Avi Jewelers USA" 
+                style={{ 
+                  height: '74px', 
+                  width: 'auto', 
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 4px 12px rgba(212, 175, 55, 0.25)) brightness(1.08)'
+                }} 
+              />
             </div>
             <p style={{ fontSize: '0.84rem', color: 'rgba(250, 247, 242, 0.7)', lineHeight: 1.6, marginBottom: '1.2rem' }}>
               Chicago's premier atelier for bespoke custom engagement rings, IGI lab-grown diamonds, and certified fine jewelry. Handcrafted with passion on Jewelers Row.

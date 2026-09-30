@@ -12,35 +12,71 @@ export default function SplitBanner({ onStartCustom }) {
           alignItems: 'stretch'
         }}
       >
-        {/* Left Side: Atelier Visual */}
+        {/* Left Side: Real Atelier Crafting Video */}
         <div 
           style={{
             position: 'relative',
             minHeight: '480px',
-            background: 'url("https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=1200&q=85") center/cover no-repeat'
+            backgroundColor: '#0E0D0B',
+            overflow: 'hidden'
           }}
         >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+          >
+            <source src="/videos/product-video-12.mp4" type="video/mp4" />
+            <source src="/videos/IMG_3665.mp4" type="video/mp4" />
+          </video>
           <div 
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.2))'
+              background: 'linear-gradient(to right, rgba(14, 13, 11, 0.75) 0%, rgba(14, 13, 11, 0.4) 60%, rgba(14, 13, 11, 0.7) 100%)'
             }}
           />
           <div 
             style={{
               position: 'absolute',
-              bottom: '2rem',
+              bottom: '2.5rem',
               left: '2rem',
               right: '2rem',
-              color: '#FFFFFF'
+              color: '#FFFFFF',
+              zIndex: 2
             }}
           >
-            <div className="badge-gold" style={{ marginBottom: '0.6rem' }}>
-              Chicago Goldsmith Atelier
+            <div 
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.45rem',
+                padding: '0.35rem 0.85rem',
+                borderRadius: '999px',
+                backgroundColor: 'rgba(212, 175, 55, 0.2)',
+                border: '1px solid #D4AF37',
+                color: '#FAF7F2',
+                fontSize: '0.72rem',
+                fontWeight: 600,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                marginBottom: '0.8rem'
+              }}
+            >
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#D4AF37', display: 'inline-block' }} />
+              Live Atelier Craftsmanship • Jewelers Row
             </div>
-            <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', color: '#FAF7F2' }}>
-              Handset in solid 14k/18k gold & platinum on Jewelers Row.
+            <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.45rem', color: '#FAF7F2', lineHeight: 1.25, fontWeight: 400 }}>
+              Master goldsmithing, stone setting & hand-polish in solid 14k/18k gold & 950 platinum.
             </div>
           </div>
         </div>

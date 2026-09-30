@@ -17,6 +17,13 @@ export default function AboutPage({ onStartCustom, onShopNow }) {
         }}
       >
         <div className="container" style={{ maxWidth: '840px', position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.2rem' }}>
+            <img 
+              src="/images/avi-jewelers-logo.png" 
+              alt="Avi Jewelers" 
+              style={{ height: '70px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 4px 14px rgba(212, 175, 55, 0.3))' }} 
+            />
+          </div>
           <span className="eyebrow" style={{ color: 'rgba(250, 247, 242, 0.8)', letterSpacing: '0.2em' }}>
             Avi Jewelers USA • Chicago Custom Designers
           </span>

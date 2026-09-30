@@ -177,36 +177,30 @@ export default function Header({
               display: 'flex', 
               flexDirection: 'column', 
               alignItems: 'center',
+              justifyContent: 'center',
               textAlign: 'center',
-              userSelect: 'none'
+              userSelect: 'none',
+              padding: '2px 0'
             }}
+            aria-label="Avi Jewelers Home"
           >
-            <span 
+            <img 
+              src="/images/avi-jewelers-logo-black.png" 
+              alt="Avi Jewelers Chicago Atelier"
               style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: isScrolled ? '1.55rem' : '1.85rem',
-                fontWeight: 400,
-                letterSpacing: '0.14em',
-                lineHeight: 1,
-                color: 'var(--text-charcoal)',
-                textTransform: 'uppercase',
-                transition: 'font-size 0.3s ease'
+                height: isScrolled ? '48px' : '58px',
+                width: 'auto',
+                maxWidth: '220px',
+                objectFit: 'contain',
+                transition: 'height 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s ease'
               }}
-            >
-              Avi Jewelers
-            </span>
-            <span 
-              style={{
-                fontSize: '0.58rem',
-                letterSpacing: '0.24em',
-                textTransform: 'uppercase',
-                color: 'var(--text-muted)',
-                marginTop: '4px',
-                fontWeight: 500
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.02)';
               }}
-            >
-              Chicago • Bespoke Fine Jewelry
-            </span>
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            />
           </div>
 
           {/* Right: Search, Wishlist, Cart & Custom Ring Action Button */}
@@ -989,6 +983,15 @@ export default function Header({
             animation: 'fadeIn 0.25s ease-out'
           }}
         >
+          {/* Mobile Drawer Brand Logo */}
+          <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '0.8rem', borderBottom: '1px solid var(--border-soft)' }}>
+            <img 
+              src="/images/avi-jewelers-logo-black.png" 
+              alt="Avi Jewelers" 
+              style={{ height: '54px', width: 'auto', objectFit: 'contain' }} 
+            />
+          </div>
+
           {/* Custom CTA */}
           <button
             onClick={() => handleNavClick('custom')}

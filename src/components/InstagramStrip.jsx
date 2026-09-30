@@ -76,17 +76,63 @@ export default function InstagramStrip() {
               if (img) img.style.transform = 'scale(1)';
             }}
           >
-            <img 
-              src={post.image} 
-              alt={post.caption}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                transition: 'transform 0.5s ease'
-              }}
-              loading="lazy"
-            />
+            {post.isVideo && post.video ? (
+              <video
+                src={post.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  transition: 'transform 0.5s ease'
+                }}
+              >
+                <source src={post.video} type={post.video.endsWith('.mov') ? 'video/quicktime' : 'video/mp4'} />
+                <source src={post.video} type="video/mp4" />
+              </video>
+            ) : (
+              <img 
+                src={post.image} 
+                alt={post.caption}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  transition: 'transform 0.5s ease'
+                }}
+                loading="lazy"
+              />
+            )}
+
+            {/* Reel Badge */}
+            {post.isVideo && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  zIndex: 2,
+                  backgroundColor: 'rgba(0, 0, 0, 0.65)',
+                  backdropFilter: 'blur(6px)',
+                  padding: '4px 8px',
+                  borderRadius: '12px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  color: '#FFFFFF',
+                  fontSize: '0.68rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.05em'
+                }}
+              >
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#D4AF37' }} />
+                REEL
+              </div>
+            )}
             {/* Hover overlay with Instagram icon & like counter */}
             <div 
               className="ig-overlay"
