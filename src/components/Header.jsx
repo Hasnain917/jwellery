@@ -13,7 +13,9 @@ import {
   ArrowRight,
   MapPin,
   ShieldCheck,
-  Award
+  Award,
+  User,
+  Package
 } from 'lucide-react';
 import { DIAMOND_SHAPES, CATEGORIES } from '../data/jewelryData';
 
@@ -27,7 +29,10 @@ export default function Header({
   openSearch, 
   setSelectedCategory,
   setSelectedShape,
-  onOpenCustom
+  onOpenCustom,
+  currentUser,
+  openAuthModal,
+  onLogout
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState(null); // 'engagement' | 'wedding' | 'bracelets' | 'studs' | 'necklaces' | 'custom' | null
@@ -113,6 +118,24 @@ export default function Header({
           </div>
 
           <div className="hide-mobile" style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
+            {currentUser ? (
+              <button 
+                onClick={() => handleNavClick('account')}
+                style={{ color: '#FFFFFF', cursor: 'pointer', fontSize: '0.71rem', display: 'flex', alignItems: 'center', gap: '0.35rem', fontWeight: 500 }}
+              >
+                <User size={12} style={{ color: 'rgba(255,255,255,0.9)' }} />
+                <span>Client: {currentUser.firstName || currentUser.name.split(' ')[0]}</span>
+              </button>
+            ) : (
+              <button 
+                onClick={openAuthModal}
+                style={{ color: 'rgba(255,255,255,0.9)', cursor: 'pointer', fontSize: '0.71rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}
+              >
+                <User size={12} style={{ color: 'rgba(255,255,255,0.9)' }} />
+                <span>Client Sign In / Register</span>
+              </button>
+            )}
+            <span style={{ opacity: 0.35 }}>•</span>
             <button 
               onClick={() => handleNavClick('admin')}
               style={{ color: 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: '0.71rem' }}
@@ -271,6 +294,37 @@ export default function Header({
                   }}
                 >
                   {cartCount}
+                </span>
+              )}
+            </button>
+
+            {/* Client Account / Sign In */}
+            <button
+              onClick={() => {
+                if (currentUser) {
+                  handleNavClick('account');
+                } else {
+                  openAuthModal();
+                }
+              }}
+              aria-label={currentUser ? `Account: ${currentUser.name}` : "Sign In or Register"}
+              title={currentUser ? `Client Portal: ${currentUser.name}` : "Client Sign In / Register"}
+              style={{
+                padding: '0.4rem 0.55rem',
+                color: currentView === 'account' ? 'var(--text-charcoal)' : 'var(--text-charcoal)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+                borderRadius: '4px',
+                border: currentView === 'account' ? '1px solid var(--border-soft)' : '1px solid transparent',
+                backgroundColor: currentView === 'account' ? 'var(--bg-cream-tint)' : 'transparent',
+                cursor: 'pointer'
+              }}
+            >
+              <User size={19} />
+              {currentUser && (
+                <span className="hide-mobile" style={{ fontSize: '0.74rem', fontWeight: 600, maxWidth: '85px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {currentUser.firstName || currentUser.name.split(' ')[0]}
                 </span>
               )}
             </button>
@@ -991,6 +1045,81 @@ export default function Header({
               style={{ height: '54px', width: 'auto', objectFit: 'contain' }} 
             />
           </div>
+
+          {/* Client Authentication Card */}
+          {currentUser ? (
+            <div style={{ backgroundColor: 'var(--bg-warm-ivory)', padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid var(--border-soft)', marginBottom: '0.8rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.3rem' }}>
+                <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+                  Signed In Client
+                </span>
+                <span style={{ fontSize: '0.68rem', color: '#2E7D32', fontWeight: 600 }}>Active</span>
+              </div>
+              <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-charcoal)', marginBottom: '0.6rem' }}>
+                {currentUser.name}
+              </div>
+              <div style={{ display: 'flex', gap: '0.6rem' }}>
+                <button
+                  onClick={() => handleNavClick('account')}
+                  style={{
+                    flex: 1,
+                    backgroundColor: 'var(--text-charcoal)',
+                    color: '#FFFFFF',
+                    border: 'none',
+                    padding: '0.5rem',
+                    fontSize: '0.76rem',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.35rem'
+                  }}
+                >
+                  <Package size={13} />
+                  <span>My Account & Orders</span>
+                </button>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onLogout();
+                  }}
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid var(--border-soft)',
+                    color: 'var(--text-muted)',
+                    padding: '0.5rem 0.8rem',
+                    fontSize: '0.74rem',
+                    borderRadius: '4px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Sign Out
+                </button>
+              </div>
+            </div>
+          ) : (
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openAuthModal();
+              }}
+              className="btn btn-outline"
+              style={{
+                width: '100%',
+                marginBottom: '0.8rem',
+                fontSize: '0.82rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                padding: '0.65rem'
+              }}
+            >
+              <User size={15} />
+              <span>Client Sign In / Register</span>
+            </button>
+          )}
 
           {/* Custom CTA */}
           <button

@@ -25,6 +25,8 @@ import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
 import PoliciesPage from './components/PoliciesPage';
 import AdminPanel from './components/AdminPanel';
+import AccountPage from './components/AccountPage';
+import AuthModal from './components/AuthModal';
 
 import ProductDetailModal from './components/ProductDetailModal';
 import CartDrawer from './components/CartDrawer';
@@ -33,10 +35,17 @@ import SearchModal from './components/SearchModal';
 import FloatingActionBar from './components/FloatingActionBar';
 
 import { fetchProducts } from './services/supabase';
+import { getCurrentUser, logoutUser } from './services/authService';
 
 export default function App() {
-  // Navigation View State: 'home', 'custom', 'shop', 'product-detail', 'checkout', 'about', 'contact', 'policies', 'admin'
+  // Navigation View State: 'home', 'custom', 'shop', 'product-detail', 'checkout', 'about', 'contact', 'policies', 'admin', 'account'
   const [currentView, setCurrentView] = useState('home');
+
+  // Client Authentication State
+  const [currentUser, setCurrentUser] = useState(() => getCurrentUser());
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authModalMode, setAuthModalMode] = useState('login');
+  const [authModalPrompt, setAuthModalPrompt] = useState(null);
 
   // Filter selection state when navigating from header or sections
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -207,6 +216,27 @@ export default function App() {
     navigateTo('custom');
   };
 
+  // Client Authentication Handlers
+  const handleOpenAuth = (mode = 'login', prompt = null) => {
+    setAuthModalMode(mode);
+    setAuthModalPrompt(prompt);
+    setAuthModalOpen(true);
+  };
+
+  const handleAuthSuccess = (user) => {
+    setCurrentUser(user);
+    showToast(`Welcome back, ${user.firstName || user.name}`);
+  };
+
+  const handleLogout = async () => {
+    await logoutUser();
+    setCurrentUser(null);
+    showToast('Signed out of Atelier successfully');
+    if (currentView === 'account') {
+      navigateTo('home');
+    }
+  };
+
   const wishlistProducts = products.filter(p => wishlistIds.includes(p.id));
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -251,6 +281,9 @@ export default function App() {
         setSelectedCategory={setSelectedCategory}
         setSelectedShape={setSelectedShape}
         onOpenCustom={() => navigateTo('custom')}
+        currentUser={currentUser}
+        openAuthModal={() => handleOpenAuth('login')}
+        onLogout={handleLogout}
       />
 
       {/* Main Content Router */}
@@ -414,6 +447,9 @@ export default function App() {
             onUpdateQuantity={handleUpdateQuantity}
             onRemoveItem={handleRemoveItem}
             onClearCart={handleClearCart}
+            currentUser={currentUser}
+            openAuthModal={() => handleOpenAuth('login', 'Sign in to link this order to your client account')}
+            onNavigateToAccount={() => navigateTo('account')}
           />
         )}
 
@@ -442,6 +478,19 @@ export default function App() {
           <AdminPanel 
             onBackToStore={() => navigateTo('home')}
             onRefreshProducts={(updated) => setProducts(updated)}
+          />
+        )}
+
+        {/* VIEW 10: CLIENT ACCOUNT & ORDERS PORTAL (/account) */}
+        {currentView === 'account' && (
+          <AccountPage 
+            currentUser={currentUser}
+            onLogout={handleLogout}
+            onNavigateToShop={() => navigateTo('shop', 'all')}
+            onNavigateToCustom={() => navigateTo('custom')}
+            onOpenProductDetail={handleOpenProductDetail}
+            onAddToCart={handleAddToCart}
+            wishlistProducts={wishlistProducts}
           />
         )}
       </main>
@@ -489,6 +538,15 @@ export default function App() {
         onClose={() => setSearchOpen(false)}
         products={products}
         onSelectProduct={handleOpenProductDetail}
+      />
+
+      {/* Luxury Client Authentication Modal (Login & Registration) */}
+      <AuthModal 
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        onSuccess={handleAuthSuccess}
+        initialMode={authModalMode}
+        messagePrompt={authModalPrompt}
       />
 
       {/* Floating Action Button for Mobile Calling & WhatsApp */}

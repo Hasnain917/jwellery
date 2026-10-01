@@ -15,15 +15,20 @@ import {
   Phone, 
   Info,
   ChevronRight,
-  Trash2
+  Trash2,
+  User
 } from 'lucide-react';
+import { saveUserOrder } from '../services/authService';
 
 export default function CheckoutPage({ 
   cartItems = [], 
   onBackToShop, 
   onUpdateQuantity, 
   onRemoveItem, 
-  onClearCart 
+  onClearCart,
+  currentUser,
+  openAuthModal,
+  onNavigateToAccount
 }) {
   const [formData, setFormData] = useState({
     email: '',
@@ -79,12 +84,68 @@ export default function CheckoutPage({
     }
   };
 
+  // Prefill shipping & contact info if client is logged in
+  React.useEffect(() => {
+    if (currentUser) {
+      const parts = (currentUser.name || '').trim().split(' ');
+      const fName = currentUser.firstName || parts[0] || '';
+      const lName = currentUser.lastName || parts.slice(1).join(' ') || '';
+      setFormData(prev => ({
+        ...prev,
+        email: currentUser.email || prev.email,
+        phone: currentUser.phone || prev.phone,
+        firstName: fName || prev.firstName,
+        lastName: lName || prev.lastName,
+        address: currentUser.address?.street || prev.address,
+        apt: currentUser.address?.apt || prev.apt,
+        city: currentUser.address?.city || prev.city,
+        state: currentUser.address?.state || prev.state,
+        zip: currentUser.address?.zip || prev.zip
+      }));
+    }
+  }, [currentUser]);
+
   const handlePlaceOrder = (e) => {
     e.preventDefault();
     setIsProcessing(true);
     setTimeout(() => {
       const generatedOrder = `AVI-${Math.floor(100000 + Math.random() * 900000)}`;
       setOrderNumber(generatedOrder);
+
+      // Save order to persistent user history & Supabase
+      saveUserOrder({
+        orderId: generatedOrder,
+        customerEmail: formData.email,
+        customerName: `${formData.firstName} ${formData.lastName}`.trim() || 'Valued Client',
+        shippingAddress: {
+          street: formData.address + (formData.apt ? `, ${formData.apt}` : ''),
+          city: formData.city,
+          state: formData.state,
+          zip: formData.zip
+        },
+        paymentMethod: formData.paymentMethod === 'wire' 
+          ? 'Wire Transfer (2% Courtesy Savings)' 
+          : `Credit Card ending in ${formData.cardNumber ? formData.cardNumber.slice(-4) : '4242'}`,
+        subtotal,
+        shippingCost,
+        tax: estimatedTax,
+        total: grandTotal,
+        items: cartItems.map(item => ({
+          id: item.id,
+          name: item.name,
+          category: item.category,
+          shape: item.shape,
+          metal: item.selectedMetal || '14k Yellow Gold',
+          ringSize: item.selectedSize || '6.5',
+          carat: item.carat,
+          stoneType: item.stoneType || 'Certified Lab Diamond',
+          price: item.price,
+          quantity: item.quantity,
+          image: item.primaryImage || item.image,
+          certificateNumber: `IGI-LG${Math.floor(100000000 + Math.random() * 900000000)}`
+        }))
+      });
+
       setIsProcessing(false);
       setOrderComplete(true);
       if (onClearCart) onClearCart();
@@ -145,11 +206,19 @@ export default function CheckoutPage({
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+            <button
+              onClick={onNavigateToAccount}
+              className="btn"
+              style={{ backgroundColor: 'var(--text-charcoal)', color: '#FFFFFF', fontSize: '0.8rem', padding: '0.75rem 1.6rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+            >
+              <span>View Order in My Account</span>
+              <ChevronRight size={14} />
+            </button>
             <button
               onClick={onBackToShop}
               className="btn btn-outline"
-              style={{ fontSize: '0.8rem', borderColor: 'var(--text-charcoal)' }}
+              style={{ fontSize: '0.8rem', borderColor: 'var(--text-charcoal)', padding: '0.75rem 1.4rem' }}
             >
               Continue Browsing Collection
             </button>
@@ -204,6 +273,36 @@ export default function CheckoutPage({
           {/* LEFT: Checkout Form Steps */}
           <form onSubmit={handlePlaceOrder} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             
+            {/* Client Status or Login Prompt */}
+            {currentUser ? (
+              <div style={{ backgroundColor: '#F0F9F1', border: '1px solid #C8E6C9', padding: '0.85rem 1.2rem', borderRadius: '6px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: '#1B5E20' }}>
+                  <CheckCircle2 size={16} />
+                  <span>Authenticated as <strong>{currentUser.name}</strong> ({currentUser.email}). Delivery details prefilled.</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={onNavigateToAccount}
+                  style={{ background: 'none', border: 'none', color: '#2E7D32', fontSize: '0.74rem', textDecoration: 'underline', cursor: 'pointer', fontWeight: 600 }}
+                >
+                  Manage Account
+                </button>
+              </div>
+            ) : (
+              <div style={{ backgroundColor: 'var(--bg-cream-tint)', border: '1px solid var(--border-soft)', padding: '0.85rem 1.2rem', borderRadius: '6px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-charcoal)' }}>
+                  ✦ <strong>Already an Avi Private Client?</strong> Sign in to prefill your verified shipping address and track this order.
+                </div>
+                <button
+                  type="button"
+                  onClick={openAuthModal}
+                  style={{ backgroundColor: '#FFFFFF', border: '1px solid var(--text-charcoal)', padding: '0.4rem 0.9rem', borderRadius: '4px', fontSize: '0.74rem', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
+                >
+                  Client Sign In
+                </button>
+              </div>
+            )}
+
             {/* Step 1: Customer Contact */}
             <div style={{ backgroundColor: '#FFFFFF', padding: '2rem', borderRadius: '6px', border: '1px solid var(--border-soft)' }}>
               <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', marginBottom: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
