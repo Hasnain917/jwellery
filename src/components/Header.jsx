@@ -329,22 +329,6 @@ export default function Header({
               )}
             </button>
 
-            {/* CTA "Start Custom Ring" */}
-            <button 
-              onClick={() => handleNavClick('custom')}
-              className="btn btn-sm hide-mobile"
-              style={{ 
-                padding: '0.5rem 1rem', 
-                fontSize: '0.72rem',
-                backgroundColor: 'var(--text-charcoal)',
-                color: '#FFFFFF',
-                borderRadius: '4px'
-              }}
-            >
-              <Sparkles size={11} />
-              Start Custom Ring
-            </button>
-
           </div>
 
         </div>
